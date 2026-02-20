@@ -120,7 +120,7 @@ def make_default_opt_flags_amd(
     w_cache_modifier = ".cg" if block_m <= 32 else None
     # num_warps, num_stages
     num_warps = 2 if (m is not None and m <= 16) else 8
-    num_stages = 2
+    num_stages = 1
     # AMD-specific
     target_kernel_kwargs = {"waves_per_eu": 0, "matrix_instr_nonkdim": 16, "kpack": 1}
     epilogue_subtile = constraints.get('epilogue_subtile', None)
